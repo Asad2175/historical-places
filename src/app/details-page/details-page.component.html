@@ -1,0 +1,27 @@
+<div class="container">
+  @if (placeData) {
+  <div class="back">
+    <button (click)="goback()"><</button>
+  </div>
+  <div class="details-page">
+    <div class="img">
+      <img [src]="placeData.image" alt="Place Image" />
+    </div>
+    <div class="data">
+      <div>
+        <span>Name:</span> {{ placeData.name }}
+      </div>
+      <div>
+        <span>Country:</span> {{ placeData.country }}
+      </div>
+      <div>
+        <span>Description:</span> {{ placeData.description }}
+      </div>
+      <div>
+        <span>Status:</span> {{ placeData.visited ? 'Visited' : 'Not Visited' }}
+      </div>
+    </div>
+  </div>
+}
+
+</div>

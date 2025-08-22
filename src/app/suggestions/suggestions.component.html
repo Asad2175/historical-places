@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="back">
+    <button [routerLink]="['/']"><</button>
+  </div>
+  <div class="places-grid">
+    <h1 class="title">Historical Places Suggestions</h1>
+  </div>
+  <div class="body">
+    <div class="grid">
+      @for (data of historicalPlaces; track data.id; let i = $index) {
+        <div class="box" (click)="gotoDetailsPage(data)">
+          <div class="img">
+            <img [src]="data.image" />
+          </div>
+          <div class="description">
+            <div class="name">{{data.name}}</div>
+            <div class="country">{{data.country}}</div>
+            <div class="des">{{data.description}}</div>
+            <div class="buttons">
+              <button [class.visited]="data.visited" (click)="onVisitClick(i, $event)">{{data.visited ? 'Visited' : 'Not Visited'}}</button>
+            </div>
+          </div>
+        </div>
+      }
+      <div class="load-more">
+        <button>Load More</button>
+      </div>
+    </div>
+  </div>
+</div>
